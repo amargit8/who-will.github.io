@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Who will sleep with Mommy today?</h2>
+
+
+<p id="demo"></p>
+ 
+<p id="week"></p>
+
+<p id="sleep"></p>
+
+<script>
+var d = new Date();
+var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+document.getElementById("demo").innerHTML = "Today is " + d;
+
+Date.prototype.getWeek = function() {
+  var onejan = new Date(this.getFullYear(),0,1);
+  var today = new Date(this.getFullYear(),this.getMonth(),this.getDate());
+  var dayOfYear = ((today - onejan + 86400000)/86400000);
+  return Math.ceil(dayOfYear/7)
+};
+
+var today = new Date();
+var currentWeekNumber = today.getWeek();
+
+var day = d.getDay();
+
+document.getElementById("week").innerHTML = "It's Week Number " + currentWeekNumber + " and the Day of the Week is " + day;
+
+
+
+var per = new String();
+if (currentWeekNumber % 2 != 0)
+	{
+    	if (day == 0 || day == 2 || day == 4 || day == 6)
+        {
+		per = "Aahan";
+        }
+       
+        else
+        { per = "Amaira";}
+    
+    }
+
+
+if (currentWeekNumber % 2 == 0)
+	{
+    	if (day == 0 || day == 2 || day == 4 || day == 6)
+        {
+		per = "Amaira";
+        }
+       
+        else
+        { per = "Aahan";}
+    
+    }
+
+ 
+  
+document.getElementById("sleep").innerHTML = per + " will sleep with Mommy today";
+
+
+</script>
+
+</body>
+</html>
