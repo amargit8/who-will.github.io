@@ -21,6 +21,7 @@ var d = new Date();
 var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 document.getElementById("demo").innerHTML = "Today is " + d;
 
+
 Date.prototype.getWeek = function() {
   var onejan = new Date(this.getFullYear(),0,1);
   var today = new Date(this.getFullYear(),this.getMonth(),this.getDate());
@@ -33,9 +34,9 @@ var currentWeekNumber = today.getWeek();
 
 var day = d.getDay();
 
-document.getElementById("week").innerHTML = "It's Week Number " + currentWeekNumber + " and the Day of the Week is " + day;
-
-
+//For Debugging
+//currentWeekNumber = 46;
+//day = 0;
 
 var per = new String();
 if (currentWeekNumber % 2 != 0)
@@ -50,11 +51,10 @@ if (currentWeekNumber % 2 != 0)
 			per = "Aahan";
 		}
 
+    }
     
-	else
+	else if (currentWeekNumber % 2 == 0)
 		{
-		if (currentWeekNumber % 2 == 0)
-			{
 			if (day == 0 || day == 2 || day == 4 || day == 6)
 			{
 				per = "Aahan";
@@ -66,9 +66,10 @@ if (currentWeekNumber % 2 != 0)
 			}
 
 		}	
-	}
+	
 
  
+document.getElementById("week").innerHTML = "It's Week Number " + currentWeekNumber + " and the Day of the Week is " + day;
   
 document.getElementById("sleep").innerHTML = per + " will sleep with Mommy today";
 
