@@ -40,28 +40,33 @@ document.getElementById("week").innerHTML = "It's Week Number " + currentWeekNum
 var per = new String();
 if (currentWeekNumber % 2 != 0)
 	{
-    	if (day == 0 || day == 2 || day == 4 || day == 6)
-        {
-		per = "Amaira";
-        }
-       
-        else
-        { per = "Aahan";}
-    
-    }
+		if (day == 0 || day == 2 || day == 4 || day == 6)
+		{
+			per = "Amaira";
+		}
 
+		else
+		{ 
+			per = "Aahan";
+		}
 
-if (currentWeekNumber % 2 == 0)
-	{
-    	if (day == 0 || day == 2 || day == 4 || day == 6)
-        {
-		per = "Aahan";
-        }
-       
-        else
-        { per = "Amaira";}
     
-    }
+	else
+		{
+		if (currentWeekNumber % 2 == 0)
+			{
+			if (day == 0 || day == 2 || day == 4 || day == 6)
+			{
+				per = "Aahan";
+			}
+
+			else
+			{ 
+				per = "Amaira";
+			}
+
+		}	
+	}
 
  
   
